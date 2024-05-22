@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body
+        {
+            margin:0;
+        }
+        *
+        {
+            animation:10s linear infinite;
+        }
+        .sky
+        {
+            width: 100vw;
+            height: 100vh;
+            background-color: skyblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            animation-name: animate-sky;
+            position: relative;
+
+        }
+        .sun,.moon
+        {
+            position: absolute;
+            width: 50vmin;
+            height: 50vmin;
+            border-radius: 50%;
+
+        }
+        .sun
+        {
+            animation-name: animate-sun;
+            background-color: gold;
+
+        }
+        .moon
+        {
+            background-color: slategray;
+            animation-name: animate-moon;
+
+        }
+        @keyframes animate-sky{
+            50%
+            {
+                background-color: black;
+            }
+        }
+        @keyframes animate-sun
+        {
+            50%
+            {
+                box-shadow: 0 0 5em 1em;
+
+            }
+        }
+        @keyframes animate-moon
+        {
+            from
+            {
+                transform: translateX(-100vmin);/* translateX moves the element horizontally on the plane */
+
+            }
+            50%
+            {
+                background-color: black;
+            }
+            to
+            {
+                transform: translateX(100vmin);/*vmin means it set the size of the element as percentage of the min value among height or width */
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="sky">
+        <div class="sun"></div>
+        <div class="moon"></div>
+    </div>
+</body>
+</html>
